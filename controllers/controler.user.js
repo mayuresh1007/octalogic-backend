@@ -12,29 +12,31 @@ vehicle.use(cors())
 // Find all Customer
 exports.Listuser = async (req, res) => {
   console.log("userlist,\n")
-  result = {};
-  await user.findAll()
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+  try {
+      result = {};
+      const userls = await user.findAll()
+      .then((userls) => res.send(userls))
+      // res.status(200).send(userls)
+      .catch((err) => console.log(err));
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('An error occurred while fetching user bookings');
+    }
 };
 
-//##########################
-exports.getUserBookings = async(req,res)=>{
-  // const user = await user.findOne({ where: { id: userId } });
-  const getuser = await userbooking.findAll({ 
-    includes:VehicleDetails,
-    where: { userId: 1 } 
-  })
-  .then((data)=>{
-    res.send(data)
-  })
-  // const bookings = await user.getUserBookings();
-  // res.send(getuser ).status(200)
-}
 
 
-// Define the getUserBookings() instance method on the User model
-// User.prototype.getUserBookings = async function() {
-//   const bookings = await UserBooking.findAll({ where: { UserId: this.id } });
-//   return bookings;
-// };
+exports.getUserBookings = async (req, res) => {
+  try {
+    const userBookings = await userbooking.findAll({
+      include: VehicleDetails,
+      where: { userId: 1 },
+    });
+
+    res.status(200).send(userBookings);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('An error occurred while fetching user bookings');
+  }
+};
+

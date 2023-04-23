@@ -19,7 +19,8 @@ module.exports = function (app) {
   app.get("/Listvehiclemodel", vehimodContr.Listvehiclemodel);
   app.get("/Listvehicledetail", vehidetailsContr.Listvehicledetail);
   app.get("/Listbooking", vehibookContr.Listbooking);
-  app.get("/getbookedvehicle", vehibookContr.getbookedvehicle);
+  // app.get("/getbookedvehicle", vehibookContr.getbookedvehicle);
+  app.get("/fetchAvailableVehicle", vehibookContr.fetchAvailableVehicle);
 
    // get customers routes
   app.get("/list", userContr.Listuser);
