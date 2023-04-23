@@ -1,0 +1,113 @@
+INSERT INTO `octadb`.`vehicletype`
+(`vtid`,
+`vehitype`,
+`isactive`,
+`createdby`,
+`createdat`,
+`updatedAt`)
+VALUES
+(1,'car',1,'admin',current_timestamp(),current_timestamp()),
+(2,'bike',1,'admin',current_timestamp(),current_timestamp());
+
+INSERT INTO `octadb`.`vehicletype`
+(`vtid`,
+`vehitype`,
+`isactive`,
+`createdby`,
+`createdat`,
+`updatedAt`)
+VALUES
+(1,'car',true,'admin',current_timestamp(),current_timestamp()),
+(2,'bike',true,'admin',current_timestamp(),current_timestamp());
+
+
+
+INSERT INTO `octadb`.`user`
+(`userId`,
+`first_name`,
+`last_name`,
+`createdby`,
+`createddate`,
+`updatedAt`)
+VALUES
+(1,'mayuresh','kumbhar','admin',current_timestamp(),current_timestamp());
+
+
+INSERT INTO `vahiclemodel`
+(`vmodid`,
+`modeltype`,
+`vehicletypeId`,
+`createdby`,
+`createdAt`,
+`updatedAt`)
+VALUES
+('1', 'hachback', '1', 'John', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('2', 'suv', '1', 'Jane', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('3', 'sedan', '1', 'Bob', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('4', 'sports', '2', 'Alice', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('5', 'cruiser', '2', 'Sam', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+SELECT * FROM octadb.vehicletype;INSERT INTO `octadb`.`vahiclemodel`
+(`vmodid`,
+`modeltype`,
+`vehicletypeId`,
+`createdby`,
+`createdat`,
+`updatedAt`)
+VALUES
+(<{vmodid: }>,
+<{modeltype: }>,
+<{vehicletypeId: }>,
+<{createdby: admin}>,
+<{createddate: }>,
+<{updatedAt: }>);
+
+INSERT INTO `octadb`.`vehicledetails`
+(`vehcileId`,
+`vehicalenumber`,
+`vehicalemodtype`,
+`isactive`,
+`isbooked`,
+`createdby`,
+`createddate`,
+`updatedAt`)
+VALUES
+(<{vehcileId: }>,
+<{vehicalenumber: }>,
+<{vehicalemodtype: }>,
+<{isactive: }>,
+<{isbooked: }>,
+<{createdby: user}>,
+<{createddate: }>,
+<{updatedAt: }>);
+
+
+
+
+
+
+
+INSERT INTO `octadb`.`userbooking`
+(`ubid`,
+`userId`,
+`vehcileId`,
+`Bookingfrom`,
+`Bookingto`,
+`createdby`,
+`createddate`,
+`updatedAt`)
+VALUES
+(<{ubid: }>,
+<{userId: }>,
+<{vehcileId: }>,
+<{Bookingfrom: }>,
+<{Bookingto: }>,
+<{createdby: user}>,
+<{createddate: }>,
+<{updatedAt: }>);
+
+
+
+user has many userbooking
+userbooking has many vehicledetails
+

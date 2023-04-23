@@ -1,0 +1,64 @@
+// Define the VehicleDetails model
+const VehicleDetails = sequelize.define('VehicleDetails', {
+  // ...
+});
+
+// Define the VehicleModel model
+const VehicleModel = sequelize.define('VehicleModel', {
+  // ...
+});
+
+// Define the VehicleType model
+const VehicleType = sequelize.define('VehicleType', {
+  // ...
+});
+
+// Define the associations between the models
+VehicleDetails.belongsTo(VehicleModel);
+VehicleModel.hasMany(VehicleDetails);
+
+VehicleModel.belongsTo(VehicleType);
+VehicleType.hasMany(VehicleModel);
+
+
+
+
+
+
+// VehicleDetails model
+class VehicleDetails extends Model {}
+VehicleDetails.init({
+  // ...
+});
+VehicleDetails.belongsTo(VehicleModel);
+VehicleDetails.hasMany(UserBooking);
+
+// VehicleModel model
+class VehicleModel extends Model {}
+VehicleModel.init({
+  // ...
+});
+VehicleModel.belongsTo(VehicleType);
+VehicleModel.hasMany(VehicleDetails);
+
+// VehicleType model
+class VehicleType extends Model {}
+VehicleType.init({
+  // ...
+});
+VehicleType.hasMany(VehicleModel);
+
+// UserBooking model
+class UserBooking extends Model {}
+UserBooking.init({
+  // ...
+});
+UserBooking.belongsTo(VehicleDetails);
+UserBooking.belongsTo(User);
+
+// User model
+class User extends Model {}
+User.init({
+  // ...
+});
+User.hasMany(UserBooking);
