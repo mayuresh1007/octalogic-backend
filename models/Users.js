@@ -1,13 +1,14 @@
-const Sequelize = require('sequelize')
-const db = require('../database/db.js')
+const Sequelize = require("sequelize");
+const db = require("../database/db.js");
+const userBooking = require("./UserBooking.js");
 
 module.exports = user = db.sequelize.define(
-  'user',
+  "user",
   {
     userId: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     first_name: {
       type: Sequelize.STRING,
@@ -20,16 +21,12 @@ module.exports = user = db.sequelize.define(
     createdby: {
       type: Sequelize.STRING,
       allowNull: false,
-      defaultValue: "user"
+      defaultValue: "user",
     },
-    
   },
   {
-    timestamps: true,// false will not do defalut createion
+    timestamps: true, // false will not do defalut createion
     tableName: "user",
-    freezeTableName: true,//If freezeTableName is true, sequelize will not try to alter the model name to get the table name. Otherwise, the model name will be pluralized
+    freezeTableName: true, //If freezeTableName is true, sequelize will not try to alter the model name to get the table name. Otherwise, the model name will be pluralized
   }
-  
 );
-// user.hasMany(userbooking,{foreignKey:'userId'});
-// userbooking.belongsTo(user);

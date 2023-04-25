@@ -13,7 +13,7 @@ module.exports = db.sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    vehicalemodtype: {
+    vmodId: {
       type: Sequelize.STRING,
       allowNull: false,
     },
@@ -42,5 +42,3 @@ module.exports = db.sequelize.define(
     freezeTableName: true,//If freezeTableName is true, sequelize will not try to alter the model name to get the table name. Otherwise, the model name will be pluralized
   }
 );
-// vehicledetails.belongsTo(vahiclemodel);
-// vahiclemodel.hasMany(vehicledetails);

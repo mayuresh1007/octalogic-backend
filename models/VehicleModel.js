@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize')
-const db = require('../database/db.js')
+const db = require('../database/db.js');
 
-module.exports = db.sequelize.define(
-  'vahiclemodel',
+module.exports = vehiclemodel= db.sequelize.define(
+  'vehiclemodel',
   {
-    vmodid: {
+    vmodId: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
@@ -13,7 +13,7 @@ module.exports = db.sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    vehicletypeId: {
+    vtId: {
       type: Sequelize.INTEGER,
       allowNull: false,
     },  
@@ -26,7 +26,7 @@ module.exports = db.sequelize.define(
   },
   {
     timestamps: true,// false will not do defalut createion
-    tableName: "vahiclemodel",
+    tableName: "vehiclemodel",
     freezeTableName: true,//If freezeTableName is true, sequelize will not try to alter the model name to get the table name. Otherwise, the model name will be pluralized
   }
 )

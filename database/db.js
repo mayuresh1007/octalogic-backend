@@ -4,7 +4,7 @@ const db = {}
 // const path = require('path');
 // const basename = path.basename(__filename);
   // (database name, username, password, and host)
-const sequelize = new Sequelize('octadb', 'root', 'mayuresh', {
+const sequelize = new Sequelize('octadb', 'root', 'Mayuresh@123', {
   host: 'localhost',
   dialect: 'mysql',
   operatorsAliases: 0,
@@ -36,7 +36,8 @@ const sequelize = new Sequelize('octadb', 'root', 'mayuresh', {
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
-db.sequelize.sync({alter: true}) // only sync the data with db
+db.sequelize.sync() // only sync the data with db
+// db.sequelize.sync({alter: true}) // only sync the data with db
 // db.sequelize.sync({ force: true, alter: true }) // only sync the data with db
   .then(() => {
     console.log('synced database')

@@ -25,5 +25,9 @@ module.exports = function (app) {
    // get customers routes
   app.get("/list", userContr.Listuser);
   app.get("/getUserBookings", userContr.getUserBookings);
+  app.get("/getUserBookingById", userContr.getUserBookingById);
+  app.post("/getBookedVehicleByNo", userContr.getBookedVehicleByNo);
+  app.post("/makeBooking", userContr.makeBooking);
+  app.post("/Submition", userContr.Submition);
    
 };

@@ -47,7 +47,9 @@ VALUES
 ('4', 'sports', '2', 'Alice', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('5', 'cruiser', '2', 'Sam', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-SELECT * FROM octadb.vehicletype;INSERT INTO `octadb`.`vahiclemodel`
+SELECT * FROM octadb.vehicletype;
+
+INSERT INTO `octadb`.`vahiclemodel`
 (`vmodid`,
 `modeltype`,
 `vehicletypeId`,
@@ -62,24 +64,7 @@ VALUES
 <{createddate: }>,
 <{updatedAt: }>);
 
-INSERT INTO `octadb`.`vehicledetails`
-(`vehcileId`,
-`vehicalenumber`,
-`vehicalemodtype`,
-`isactive`,
-`isbooked`,
-`createdby`,
-`createddate`,
-`updatedAt`)
-VALUES
-(<{vehcileId: }>,
-<{vehicalenumber: }>,
-<{vehicalemodtype: }>,
-<{isactive: }>,
-<{isbooked: }>,
-<{createdby: user}>,
-<{createddate: }>,
-<{updatedAt: }>);
+
 
 
 
